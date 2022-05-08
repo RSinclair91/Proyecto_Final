@@ -1,185 +1,123 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-h1{
-    color: rgb(255, 255, 255);
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  background-repeat: no-repeat;
+  background-position: center; }
+  body h1 {
+    color: white;
     text-align: center;
     font-family: 'Marck Script', cursive;
-    font-size: 5rem;
-}
-h2, h4{
-    color: rgb(255, 255, 255);
+    font-size: 5rem; }
+  body h2 {
+    color: white;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2,5rem;
-}
-h2 a{
+    font-size: 2rem; }
+    body h2 a {
+      color: white; }
+  body h4 {
+    margin-top: 3;
     color: white;
-}
-
-.textoindex{
-    display: flex;
+    text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 2rem;
-    padding:30px;
-    margin: 5rem;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.575);
-    align-items: center;
-}
-footer{
-    color: rgb(2, 2, 2);
-    text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1,6rem;
-    background-color: rgba(255, 254, 254, 0.5);
-}
-footer p a{
+    text-transform: uppercase; }
+
+.textoindex {
+  display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5rem;
+  padding: 30px;
+  margin: 3rem;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.575);
+  align-items: center; }
+
+footer {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.575); }
+  footer a {
+    text-decoration: none;
     font-style: none;
-    color: white;
-}
-img{
-    position: relative;
-}
+    color: #262525; }
 
+img {
+  position: relative; }
 
-/*GALERIA*/
+.imagenes img {
+  position: relative;
+  justify-items: center;
+  height: 50%;
+  width: 50%; }
 
-.imagenes img{ 
-    position: relative;    
-    justify-items: center;
-    height: 50%;
-    width: 50%;
-}
-.carousel-inner .item img {
+.carousel {
+  width: 80%;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  display: block; }
+  .carousel .carousel-inner .item img {
     object-fit: scale-down;
     height: 50vh;
-    width: 100%;
-}  
+    width: 100%; }
 
-.carousel{
-    width: 80%;
+.btn {
+  background-color: rgba(255, 255, 255, 0.575);
+  color: #262525; }
+
+.contendor {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row: repeat(5, 1fr);
+  grid-template-areas: "menu menu menu menu menu" "logo logo logo logo logo" "textoindex textoindex textoindex textoindex textoindex" "textoindex textoindex textoindex textoindex textoindex" "footer footer footer footer footer"; }
+
+.menu {
+  grid-area: menu; }
+
+.textoindex {
+  grid-area: textoindex; }
+
+.logo {
+  grid-area: logo; }
+
+.footer {
+  grid-area: footer; }
+
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: repeat(5, 1fr);
+  grid-template-areas: "menu menu menu" "logo logo logo" "imagenes imagenes imagenes" "imagenes imagenes imagenes" "footer footer footer"; }
+
+.imagenes {
+  grid-area: imagenes; }
+
+.contacto {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row: repeat(5, 1fr);
+  grid-template-areas: "menu menu menu menu menu" "logo logo logo logo logo" "cuadro cuadro cuadro cuadro cuadro" "cuadro cuadro cuadro cuadro cuadro" "footer footer footer footer footer"; }
+
+.cuadro {
+  grid-area: cuadro; }
+
+@media only screen and (min-width: 480px) {
+  .contendor {
+    grid-template-areas: "menu menu" "logo logo" "textoindex textoindex" "textoindex textoindex" "footer footer"; }
+  .textoindex {
+    font-size: 1.8rem; }
+  .imagenes {
+    grid-template-areas: "menu menu" "logo logo" "imagenes" "imagenes" "footer footer";
     align-items: center;
-    margin: auto;
-    position: relative;
-    display: block;
-}
-
-/*CONTACTO*/
-
-.btn{
-    background-color: #5a5656;
-    color: white;
-}
-
-/*GRID*/
-
-.contendor{
-display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-row: repeat(5, 1fr);
-
-    grid-template-areas: 
-    "menu menu menu menu menu"
-    "logo logo logo logo logo"
-    "textoindex textoindex textoindex textoindex textoindex"
-    "textoindex textoindex textoindex textoindex textoindex"
-    "footer footer footer footer footer";
-}
-
-.menu{
-    grid-area: menu;
-}
-.textoindex{
-    grid-area: textoindex;
-}
-.logo{
-    grid-area: logo;
-}
-.footer{
-    grid-area: footer;
-}
-
-
-.imagenes{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-row: repeat(5, 1fr);
-    
-    grid-template-areas: 
-        "menu menu menu"
-        "logo logo logo"
-        "imagenes imagenes imagenes"
-        "imagenes imagenes imagenes"
-        "footer footer footer";
-}
-.imagenes{
-    grid-area: imagenes;
-}
-
-.contacto{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-row: repeat(5, 1fr);
-    
-    grid-template-areas: 
-        "menu menu menu menu menu"
-        "logo logo logo logo logo"
-        "cuadro cuadro cuadro cuadro cuadro"
-        "cuadro cuadro cuadro cuadro cuadro"
-        "footer footer footer footer footer";
-}
-.cuadro{
-    grid-area: cuadro;
-}
-
-/*RESPONSIVE*/
-
-@media only screen and (min-width: 480px){
-    .contendor{
-        grid-template-areas: 
-        "menu menu"
-        "logo logo"
-        "textoindex textoindex"
-        "textoindex textoindex"
-        "footer footer";}
-    .textoindex{
-        font-size: 1.8rem;}
-    .imagenes{
-        grid-template-areas: 
-        "menu menu"
-        "logo logo"
-        "imagenes"
-        "imagenes"
-        "footer footer";
-        align-items: center;
-        display: block;}
-    .contacto{
-        grid-template-areas: 
-        "menu menu"
-        "logo logo"
-        "cuadro cuadro"
-        "cuadro cuadro"
-        "footer footer";
-        align-items: center;
-        display: block;}
-    .cuadro{
-        grid-template-areas: 
-        "menu menu"
-        "logo logo"
-        "cuadro cuadro"
-        "cuadro cuadro"
-        "footer footer";
-        display: block;}
-    }
+    display: block; }
+  .contacto {
+    grid-template-areas: "menu menu" "logo logo" "cuadro cuadro" "cuadro cuadro" "footer footer";
+    align-items: center;
+    display: block; }
+  .cuadro {
+    grid-template-areas: "menu menu" "logo logo" "cuadro cuadro" "cuadro cuadro" "footer footer";
+    display: block; } }

@@ -1,0 +1,169 @@
+$color: rgb(255, 255, 255);
+$bgcolor:rgba(255, 255, 255, 0.575);
+$textcolor: rgb(38, 37, 37);
+@mixin text ($text-align, $font-family){
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+};
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    h1{
+        color: $color;
+        text-align: center;
+        font-family: 'Marck Script', cursive;
+        font-size: 5rem;
+    }
+    h2{
+        color: $color;
+        @include text();
+        font-size: 2rem;
+        a{
+            color: $color;
+        }
+    } 
+    h4{
+        margin-top: 3;
+        color: $color;
+        @include text();
+        font-size: 2rem;
+        text-transform: uppercase;
+    } 
+}
+.textoindex{
+    display: flex;
+    font-size: 1.5rem;
+    padding:30px;
+    margin: 3rem;
+    border-radius: 15px;
+    background-color: $bgcolor;
+    @include text();
+}
+footer{
+    @include text();
+    font-size: 1rem;
+    background-color: $bgcolor;
+    a{
+        text-decoration: none;
+        font-style: none;
+        color: $textcolor;
+    }
+}
+img{
+    position: relative;
+}
+.imagenes img{ 
+    position: relative;    
+    justify-items: center;
+    height: 50%;
+    width: 50%;
+}
+.carousel{
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    display: block;
+    .carousel-inner .item img {
+    object-fit: scale-down;
+    height: 50vh;
+    width: 100%;
+    }  
+}
+.btn{
+    background-color: $bgcolor;
+    color: $textcolor;
+    @include text();
+}
+.contendor{
+    display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-row: repeat(5, 1fr);
+        grid-template-areas: 
+        "menu menu menu menu menu"
+        "logo logo logo logo logo"
+        "textoindex textoindex textoindex textoindex textoindex"
+        "textoindex textoindex textoindex textoindex textoindex"
+        "footer footer footer footer footer";
+}
+.menu{
+        grid-area: menu;
+}
+.textoindex{
+        grid-area: textoindex;
+}
+.logo{
+        grid-area: logo;
+}
+.footer{
+        grid-area: footer;
+}
+.imagenes{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-row: repeat(5, 1fr);
+        grid-template-areas: 
+            "menu menu menu"
+            "logo logo logo"
+            "imagenes imagenes imagenes"
+            "imagenes imagenes imagenes"
+            "footer footer footer";
+}
+.imagenes{
+        grid-area: imagenes;
+}
+.contacto{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-row: repeat(5, 1fr);
+        grid-template-areas: 
+            "menu menu menu menu menu"
+            "logo logo logo logo logo"
+            "cuadro cuadro cuadro cuadro cuadro"
+            "cuadro cuadro cuadro cuadro cuadro"
+            "footer footer footer footer footer";
+    }
+.cuadro{
+        grid-area: cuadro;
+}
+@media only screen and (min-width: 480px){
+.contendor{
+        grid-template-areas: 
+        "menu menu"
+        "logo logo"
+        "textoindex textoindex"
+        "textoindex textoindex"
+        "footer footer";}
+.textoindex{
+        font-size: 1.8rem;}
+.imagenes{
+        grid-template-areas: 
+        "menu menu"
+        "logo logo"
+        "imagenes"
+        "imagenes"
+        "footer footer";
+        align-items: center;
+        display: block;}
+.contacto{
+        grid-template-areas: 
+        "menu menu"
+        "logo logo"
+        "cuadro cuadro"
+        "cuadro cuadro"
+        "footer footer";
+        align-items: center;
+        display: block;}
+.cuadro{
+        grid-template-areas: 
+        "menu menu"
+        "logo logo"
+        "cuadro cuadro"
+        "cuadro cuadro"
+        "footer footer";
+        display: block;}
+    }
